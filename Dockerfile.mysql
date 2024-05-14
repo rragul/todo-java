@@ -1,0 +1,11 @@
+# Use the official MySQL image from the Docker Hub
+FROM mysql:5.7
+
+# Set the environment variables for MySQL
+ENV MYSQL_ROOT_PASSWORD=ragul0506
+ENV MYSQL_DATABASE=tododb
+ENV MYSQL_USER=ragul
+ENV MYSQL_PASSWORD=ragul0506
+
+# Expose the MySQL port
+EXPOSE 3307

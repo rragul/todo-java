@@ -7,7 +7,6 @@ pipeline {
                 git credentialsId: '3edf2796-9b71-4d2e-9adc-695135675845', url: 'https://github.com/rragul/todo-java'
             }
         }
-        stages {
         stage('Test Maven') {
             steps {
                 sh 'mvn --version'

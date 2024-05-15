@@ -12,16 +12,16 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    docker.build('todoapp:latest', '.')
+                    docker.build('ragul05/todoapp:latest', '.')
                 }
             }
         }
         stage('Push Docker Image') {
             steps {
-                // Push Docker image to Docker Hub or your Docker registry
+                // Push Docker image to Docker Hub
                 script {
-                    docker.withRegistry('https://hub.docker.com/repositories/ragul05', 'e2123d0a-7c23-4141-9a17-caedcd1eb7cb') {
-                        docker.image('todoapp:latest').push('latest')
+                    docker.withRegistry('https://registry.hub.docker.com', 'e2123d0a-7c23-4141-9a17-caedcd1eb7cb') {
+                        docker.image('ragul05/todoapp:latest').push('latest')
                     }
                 }
             }

@@ -8,6 +8,12 @@ pipeline {
                 git credentialsId: '3edf2796-9b71-4d2e-9adc-695135675845', url: 'https://github.com/rragul/todo-java'
             }
         }
+         stage('Build Project') {
+            steps {
+                // Build the project using Maven
+                sh 'mvn clean install'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 // Build Docker image
